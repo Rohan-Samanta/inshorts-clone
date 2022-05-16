@@ -11,8 +11,9 @@ import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
+import category from "../../data/Catagory";
 
-export default function TemporaryDrawer() {
+export default function TemporaryDrawer({ setCategory }) {
   const [state, setState] = React.useState({
     left: false,
   });
@@ -36,25 +37,13 @@ export default function TemporaryDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
+        <ListItem>Categories</ListItem>
       </List>
       <Divider />
       <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
+        {category.map((text, index) => (
           <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
+            <ListItemButton onClick={() => setCategory(text)}>
               <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>

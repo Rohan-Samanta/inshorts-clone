@@ -1,12 +1,13 @@
 import React from "react";
 import Drawer from "../material-ui/Drawer";
 import "./Nav.css";
-function Nav() {
+
+function Nav({ setCategory }) {
   return (
     <div className="nav">
       <div className="menu">
         {" "}
-        <Drawer />
+        <Drawer setCategory={setCategory} />
       </div>
 
       <img

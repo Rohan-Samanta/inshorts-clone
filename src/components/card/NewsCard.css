@@ -1,0 +1,30 @@
+.news-card {
+  display: flex;
+  width: 100%;
+  box-shadow: 0 2px 5px black;
+  padding: 10px;
+  margin-bottom: 25px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.news-image {
+  object-fit: fill;
+  width: 300px;
+  height: 250px;
+  margin-right: 20px;
+}
+.news-text {
+  padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-left: 20px;
+}
+.author {
+  font-size: 12px;
+  font-weight: 300;
+  color: gray;
+}
